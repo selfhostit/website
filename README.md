@@ -1,13 +1,13 @@
 # selfhostit website
 
-The selfhostit site: the app menu, the one-line installer and the custom-order page. It is
+The selfhostit site: the app menu, the one-line installer and a contact page. It is
 plain HTML and CSS with no build step, served by GitHub Pages. The install guide it links to
 is in [selfhostit/docs](https://github.com/selfhostit/docs).
 
-- `index.html`: the page
+- `index.html`: the home page
+- `contact.html`: the contact page
 - `style.css`: styles, with a light and a dark theme
 - `img/`: app icons and screenshots, copied from the app repositories and resized
-- `.github/ISSUE_TEMPLATE/request.yml`: the form behind "Tell us what you need"
 
 To see it, open `index.html` in a browser, or run `python3 -m http.server` here and open
 http://localhost:8000.
