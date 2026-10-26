@@ -21,8 +21,8 @@ screenshot in `img/`, and link the app's repository.
 
 1. On GitHub: Settings > Pages > Build and deployment: **Deploy from a branch**, branch
    `main`, folder `/ (root)`. The site goes live at `https://selfhostit.github.io/website/`.
-2. Still under Pages, enter your domain (for example `selfhostit.com`) under **Custom
-   domain** and save. GitHub adds a `CNAME` file to the repository.
+2. Still under Pages, enter `selfhostit.org` under **Custom
+   domain** and save. The `CNAME` file in this repository already holds it.
 3. On Porkbun: Domain Management > your domain > **DNS**. Delete the default parking records
    (the `ALIAS` or `A` records for the bare domain and the `*` and `www` `CNAME`s), then add:
 
