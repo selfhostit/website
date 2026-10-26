@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>selfhostit: small apps you run at home</title>
+<meta name="description" content="Private apps for your household that run on your own Raspberry Pi, NAS or server. Free and open source, with setup help and custom apps on request.">
+<meta property="og:title" content="selfhostit">
+<meta property="og:description" content="Small apps you run on your own hardware. Your data stays home.">
+<link rel="icon" href="img/plasto.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-row">
+    <a class="logo" href="#">selfhostit</a>
+    <nav>
+      <a href="#apps">Apps</a>
+      <a href="#install">Install</a>
+      <a href="#custom">Custom</a>
+      <a href="https://github.com/selfhostit">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero wrap">
+  <h1>Small apps you run at home.</h1>
+  <p class="lead">Private apps for your household, on your own Raspberry Pi, NAS or a cheap server.
+    Your data never leaves the house. No subscriptions, no accounts on anyone's cloud.</p>
+  <div class="actions">
+    <a class="btn primary" href="#apps">Pick your apps</a>
+    <a class="btn" href="https://github.com/selfhostit/docs">Read the install guide</a>
+  </div>
+  <ul class="points">
+    <li>Install on your phone from the browser</li>
+    <li>One small container per app</li>
+    <li>Raspberry Pi, Synology, QNAP, Unraid, any Linux box</li>
+    <li>Free and open source</li>
+  </ul>
+</section>
+
+<section id="apps" class="wrap">
+  <h2>The menu</h2>
+  <p class="sub">Ready to install. Pick one or all of them; they run side by side on the same machine.</p>
+
+  <div class="apps">
+    <article class="app">
+      <div class="app-head">
+        <img src="img/splitwiz.png" alt="" class="icon wide">
+        <div>
+          <h3>Splitwiz</h3>
+          <p>Split shared costs with your partner or roommate.</p>
+        </div>
+      </div>
+      <img class="shot" src="img/splitwiz-screen.webp" alt="Splitwiz home screen with the balance between two people" loading="lazy">
+      <ul>
+        <li>Who owes whom, at a glance</li>
+        <li>Repeating expenses and CSV import</li>
+        <li>Notifications when the other adds an expense</li>
+      </ul>
+      <div class="app-links">
+        <a class="btn primary small" href="https://github.com/selfhostit/docs#quick-start">Install</a>
+        <a class="btn small" href="https://github.com/selfhostit/splitwiz">More</a>
+      </div>
+    </article>
+
+    <article class="app">
+      <div class="app-head">
+        <img src="img/should-we.png" alt="" class="icon">
+        <div>
+          <h3>should-we</h3>
+          <p>Pick one option together: a home, a car, a holiday.</p>
+        </div>
+      </div>
+      <img class="shot" src="img/should-we-screen.webp" alt="should-we start screen for a new decision" loading="lazy">
+      <ul>
+        <li>Everyone weighs what matters to them</li>
+        <li>One fair ranking from everyone's ratings</li>
+        <li>Share a link, no accounts needed</li>
+      </ul>
+      <div class="app-links">
+        <a class="btn primary small" href="https://github.com/selfhostit/docs#quick-start">Install</a>
+        <a class="btn small" href="https://github.com/selfhostit/should-we">More</a>
+      </div>
+    </article>
+
+    <article class="app">
+      <div class="app-head">
+        <img src="img/flowy.svg" alt="" class="icon">
+        <div>
+          <h3>Flowy</h3>
+          <p>A private period and cycle tracker.</p>
+        </div>
+      </div>
+      <img class="shot" src="img/flowy-screen.webp" alt="Flowy today screen with days until the next period" loading="lazy">
+      <ul>
+        <li>Predictions, fertile window and reminders</li>
+        <li>Works offline, with an optional PIN</li>
+        <li>Health data that stays in your home</li>
+      </ul>
+      <div class="app-links">
+        <a class="btn primary small" href="https://github.com/selfhostit/docs#quick-start">Install</a>
+        <a class="btn small" href="https://github.com/selfhostit/flowy">More</a>
+      </div>
+    </article>
+
+    <article class="app">
+      <div class="app-head">
+        <img src="img/troye.svg" alt="" class="icon">
+        <div>
+          <h3>Troye <span class="tag">coming soon</span></h3>
+          <p>A private calorie and weight tracker.</p>
+        </div>
+      </div>
+      <ul>
+        <li>Log food by search, barcode or photo</li>
+        <li>Photos read by a vision model on your own GPU</li>
+        <li>Weight trend and a daily budget</li>
+      </ul>
+      <div class="app-links">
+        <a class="btn small" href="https://github.com/selfhostit/troye">Follow along</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="install" class="band">
+  <div class="wrap">
+    <h2>Install in one line</h2>
+    <p class="sub">On a Raspberry Pi, a Linux server or a NAS with SSH. It installs Docker if needed,
+      asks which apps you want and starts them. Run it again to update.</p>
+    <div class="code">
+      <code id="cmd">curl -fsSL https://raw.githubusercontent.com/selfhostit/docs/main/install.sh | sh</code>
+      <button type="button" class="copy" data-copy="cmd">Copy</button>
+    </div>
+    <ol class="steps">
+      <li><strong>Run the installer</strong> and pick your apps.</li>
+      <li><strong>Give them an HTTPS address</strong> with Tailscale or your own domain.</li>
+      <li><strong>Open them on your phone</strong> and add them to the home screen.</li>
+    </ol>
+    <p class="guides">Step by step:
+      <a href="https://github.com/selfhostit/docs/blob/main/linux.md">Raspberry Pi and Linux</a> ·
+      <a href="https://github.com/selfhostit/docs/blob/main/synology.md">Synology</a> ·
+      <a href="https://github.com/selfhostit/docs/blob/main/other-nas.md">Other NAS</a> ·
+      <a href="https://github.com/selfhostit/docs/blob/main/phones.md">Phones</a></p>
+  </div>
+</section>
+
+<section id="custom" class="wrap">
+  <h2>Rather have it done for you?</h2>
+  <p class="sub">The apps stay free. If you'd like a hand, or something that isn't on the menu, ask.</p>
+  <div class="offers">
+    <div class="offer">
+      <h3>Setup help</h3>
+      <p>We set the apps up on your Raspberry Pi or NAS over a call or remotely, with HTTPS,
+        phone install and backups, and show you how to update them.</p>
+    </div>
+    <div class="offer">
+      <h3>A custom app</h3>
+      <p>An app for your household, club or small team: a tracker, a booking list, a shared
+        inventory. Built on the same foundation, running on your own hardware.</p>
+    </div>
+  </div>
+  <div class="actions">
+    <a class="btn primary" href="https://github.com/selfhostit/website/issues/new?template=request.yml">Tell us what you need</a>
+    <a class="btn" href="https://buymeacoffee.com/kalfasyan">Buy me a coffee</a>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap build">
+    <img src="img/plasto.svg" alt="" class="icon big">
+    <div>
+      <h2>Build your own with plasto</h2>
+      <p>Every app here grows from <a href="https://github.com/selfhostit/plasto">plasto</a>, an open
+        template with sign-in, a database, push notifications, scheduled jobs, backups and a
+        phone-installable web app already in place. You add your screens and data.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap foot">
+  <span>selfhostit · open source, MIT licensed</span>
+  <a href="https://github.com/selfhostit">github.com/selfhostit</a>
+</footer>
+
+<script>
+  for (const b of document.querySelectorAll('[data-copy]')) {
+    b.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(document.getElementById(b.dataset.copy).textContent)
+        b.textContent = 'Copied'
+        setTimeout(() => (b.textContent = 'Copy'), 1500)
+      } catch {}
+    })
+  }
+</script>
+</body>
+</html>
