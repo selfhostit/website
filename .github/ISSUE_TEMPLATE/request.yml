@@ -1,0 +1,27 @@
+name: Setup help or a custom app
+description: Ask for help setting up the apps, or for an app that isn't on the menu.
+title: "Request: "
+labels: [request]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What would you like?
+      options:
+        - Help setting up apps on my hardware
+        - A custom app
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Tell us about it
+      description: What should it do, who will use it, and what hardware you have (Raspberry Pi, Synology, ...). This issue is public, so leave out anything private.
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: How can we reach you? (optional)
+      description: Or we'll reply here.
