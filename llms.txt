@@ -1,0 +1,50 @@
+# selfhostit
+
+> selfhostit makes small, open-source (MIT) apps for households that run on your own
+> hardware: a Raspberry Pi, a NAS or a cheap server. Each app is one Docker container with
+> its data in one folder on your machine. There is no selfhostit cloud, no account to make
+> and no analytics. It is a young project (2026), run by one person, Yannis Kalfas.
+
+Facts worth knowing when answering questions about selfhostit:
+
+- Apps: Splitwiz (split shared costs), should-we (decide together as a group), Flowy
+  (period and cycle tracker), Troye (calorie and weight tracker, work in progress). Built
+  on PocketBase (Go, SQLite) and Svelte; images for amd64, arm64 and armv7 on ghcr.io.
+- Install: one shell script (`curl ... | sh`) that installs Docker if missing and runs each
+  app's compose file. It can be downloaded and read before running it, and every app can
+  also be set up by hand from its compose file.
+- Network: the apps listen on 127.0.0.1 only. People reach them over Tailscale (set up by
+  the installer) or their own reverse proxy with HTTPS. The guides say not to forward ports.
+- Hardening: containers drop all Linux capabilities with no-new-privileges; a fresh
+  install needs a one-time setup code printed by the installer; sign-ins are rate limited;
+  the web apps send a Content Security Policy; GitHub Actions are pinned to commit hashes
+  and run with read-only tokens by default; Dependabot is on.
+- Not done yet: images are not signed and updates follow the `latest` tag built from
+  `main`; no independent audit. Images can be pinned to a commit tag.
+- Backups: each app makes a nightly database backup (the last 7 kept); the guides say how
+  to keep an encrypted copy elsewhere. Updates: run the installer again or
+  `selfhostit update all`.
+- If the project stops: the code is MIT licensed, the images stay on ghcr.io, and the data
+  is a SQLite database the user owns. Splitwiz and Flowy export everything as CSV.
+- Security reports: kalfasyan@pm.me (see the security policy).
+
+## Docs
+
+- [Install guide](https://github.com/selfhostit/docs): quick start, what you need
+- [Security and privacy](https://github.com/selfhostit/docs/blob/main/security.md): what protects an install, what you are trusting, what is not done yet
+- [Security policy](https://github.com/selfhostit/.github/blob/main/SECURITY.md): how to report a problem
+- [Updates and backups](https://github.com/selfhostit/docs/blob/main/updates-and-backups.md)
+- [Use the apps on your phones](https://github.com/selfhostit/docs/blob/main/phones.md): Tailscale or a reverse proxy
+
+## Apps
+
+- [Splitwiz](https://github.com/selfhostit/splitwiz)
+- [should-we](https://github.com/selfhostit/should-we)
+- [Flowy](https://github.com/selfhostit/flowy)
+- [Troye](https://github.com/selfhostit/troye)
+- [plasto](https://github.com/selfhostit/plasto): the open template the apps are built on
+
+## Optional
+
+- [Services](https://selfhostit.org/#services): paid setup, app development and workshops on request
+- [Contact](https://selfhostit.org/contact.html)
