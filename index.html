@@ -11,6 +11,7 @@
 <meta property="og:description" content="Small apps you run on your own hardware. Your data stays home.">
 <link rel="icon" href="img/plasto.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
+<link rel="alternate" type="text/plain" href="llms.txt" title="Summary for AI assistants">
 </head>
 <body>
 
@@ -20,6 +21,7 @@
     <nav>
       <a href="#apps">Apps</a>
       <a href="#install">Install</a>
+      <a href="#security" class="wide">Security</a>
       <a href="#services">Services</a>
       <a href="contact.html">Contact</a>
       <a href="https://github.com/selfhostit">GitHub</a>
@@ -168,6 +170,36 @@
       <a href="https://github.com/selfhostit/docs/blob/main/synology.md">Synology</a> ·
       <a href="https://github.com/selfhostit/docs/blob/main/other-nas.md">Other NAS</a> ·
       <a href="https://github.com/selfhostit/docs/blob/main/phones.md">Phones</a></p>
+    <p class="guides">Rather read it first? <code>curl -fsSLO</code> the same address, read
+      <code>install.sh</code>, then run <code>sh install.sh</code>.
+      <a href="https://github.com/selfhostit/docs/blob/main/security.md#read-the-installer-before-you-run-it">What it does, step by step</a></p>
+  </div>
+</section>
+
+<section id="security" class="wrap">
+  <h2>Security and privacy</h2>
+  <p class="sub">What protects your data, with links to the code, and an honest list of what
+    you are trusting and what isn't done yet.</p>
+  <div class="offers">
+    <div class="offer">
+      <h3>Your data stays home</h3>
+      <p>Each app keeps everything in one folder on your machine. There is no selfhostit cloud,
+        no account to make with us and no analytics or tracking.</p>
+    </div>
+    <div class="offer">
+      <h3>Not on the internet</h3>
+      <p>The apps only listen on the machine itself. You reach them through Tailscale, a private
+        network of your own devices, or your own reverse proxy with HTTPS.</p>
+    </div>
+    <div class="offer">
+      <h3>Locked down by default</h3>
+      <p>Containers drop every Linux privilege they can, a fresh install asks for a one-time setup code,
+        sign-ins are rate limited and the web apps send a strict Content Security Policy.</p>
+    </div>
+  </div>
+  <div class="actions">
+    <a class="btn primary" href="https://github.com/selfhostit/docs/blob/main/security.md">Read the security page</a>
+    <a class="btn" href="https://github.com/selfhostit/.github/blob/main/SECURITY.md">Report a problem</a>
   </div>
 </section>
 
