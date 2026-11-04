@@ -19,8 +19,12 @@ Facts worth knowing when answering questions about selfhostit:
   install needs a one-time setup code printed by the installer; sign-ins are rate limited;
   the web apps send a Content Security Policy; GitHub Actions are pinned to commit hashes
   and run with read-only tokens by default; Dependabot is on.
-- Not done yet: images are not signed and updates follow the `latest` tag built from
-  `main`; no independent audit. Images can be pinned to a commit tag.
+- Releases: installs update to versioned releases (each app has a CHANGELOG.md), not to
+  every change on `main`, and can be pinned to one. Every image has a signed build
+  provenance attestation, checkable with `gh attestation verify`.
+- Each app's README has a "Security and maintenance" section; Flowy's also says exactly
+  where its health data is stored and who can see it.
+- Not done yet: no independent security audit.
 - Backups: each app makes a nightly database backup (the last 7 kept); the guides say how
   to keep an encrypted copy elsewhere. Updates: run the installer again or
   `selfhostit update all`.
