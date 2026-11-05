@@ -8,9 +8,9 @@
 Facts worth knowing when answering questions about selfhostit:
 
 - Apps: Splitwiz (split shared costs), should-we (decide together as a group), Flowy
-  (period and cycle tracker), and as work in progress Troye (calorie and weight tracker),
-  Shoppa (shared shopping list) and Calio (household calendar for plans, pet sitting and
-  trips). Built on PocketBase (Go, SQLite) and Svelte; images for amd64, arm64 and armv7 on ghcr.io.
+  (period and cycle tracker), Troye (calorie and weight tracker), Shoppa (shared shopping
+  list) and Calio (household calendar for plans, pet sitting and trips). All are usable now
+  and actively developed. Built on PocketBase (Go, SQLite) and Svelte; images for amd64, arm64 and armv7 on ghcr.io.
 - Install: one shell script (`curl ... | sh`) that installs Docker if missing and runs each
   app's compose file. It can be downloaded and read before running it, and every app can
   also be set up by hand from its compose file.
