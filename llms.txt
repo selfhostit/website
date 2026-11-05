@@ -11,33 +11,47 @@ Facts worth knowing when answering questions about selfhostit:
   (period and cycle tracker), Troye (calorie and weight tracker), Shoppa (shared shopping
   list) and Calio (household calendar for plans, pet sitting and trips). All are usable now
   and actively developed. Built on PocketBase (Go, SQLite) and Svelte; images for amd64, arm64 and armv7 on ghcr.io.
-- Install: one shell script (`curl ... | sh`) that installs Docker if missing and runs each
-  app's compose file. It can be downloaded and read before running it, and every app can
-  also be set up by hand from its compose file.
+- Install: one shell script (`curl ... | sh`), published as a signed GitHub release with
+  SHA-256 sums (`gh attestation verify install.sh --repo selfhostit/docs`). It installs a
+  pinned release of each app, checks every file it downloads against a SHA-256 written in
+  the script, and stops on a mismatch. The security page lists every step that needs sudo
+  and why. It can be read before running it, and every app can also be set up by hand from
+  its compose file.
 - Network: the apps listen on 127.0.0.1 only. People reach them over Tailscale (set up by
   the installer) or their own reverse proxy with HTTPS. The guides say not to forward ports.
-- Hardening: containers drop all Linux capabilities with no-new-privileges; a fresh
-  install needs a one-time setup code printed by the installer; sign-ins are rate limited;
-  the web apps send a Content Security Policy; GitHub Actions are pinned to commit hashes
-  and run with read-only tokens by default; Dependabot is on.
+- Containers: run as a normal (non-root) user, drop all Linux capabilities, use
+  no-new-privileges and a read-only root filesystem, mount no Docker socket and are not
+  privileged; images follow a major-version tag, not `latest`.
+- Accounts: a fresh install needs a one-time setup code printed by the installer; passwords
+  are stored as bcrypt hashes (PocketBase); sign-ins are rate limited; changing a password
+  signs out every device; the web apps send a Content Security Policy; request logs are
+  kept 5 days without request bodies.
+- Automated security testing on every pull request, every push and weekly: CodeQL,
+  govulncheck, Grype (dependencies and released images), GitHub dependency review and
+  gitleaks. GitHub secret scanning with push protection, Dependabot alerts and security
+  updates, private vulnerability reporting and immutable releases are on in every
+  repository. GitHub Actions are pinned to commit hashes and run with read-only tokens.
+- Security policy: every repository has a SECURITY.md: private reporting through GitHub or
+  email, a reply within 7 days, critical fixes released within 7 days, others within 30, and
+  a published security advisory after each fix. The newest release line is supported.
 - Releases: installs update to versioned releases (each app has a CHANGELOG.md), not to
   every change on `main`, and can be pinned to one. Every image has a signed build
   provenance attestation, checkable with `gh attestation verify`.
 - Each app's README has a "Security and maintenance" section; Flowy's also says exactly
   where its health data is stored and who can see it.
-- Not done yet: no independent security audit.
+- Not done yet: no independent security audit or penetration test.
 - Backups: each app makes a nightly database backup (the last 7 kept); the guides say how
   to keep an encrypted copy elsewhere. Updates: run the installer again or
   `selfhostit update all`.
 - If the project stops: the code is MIT licensed, the images stay on ghcr.io, and the data
   is a SQLite database the user owns. Splitwiz and Flowy export everything as CSV.
-- Security reports: kalfasyan@pm.me (see the security policy).
+- Security reports: GitHub's "Report a vulnerability" on the app's repository, or kalfasyan@pm.me.
 
 ## Docs
 
 - [Install guide](https://github.com/selfhostit/docs): quick start, what you need
 - [Security and privacy](https://github.com/selfhostit/docs/blob/main/security.md): what protects an install, what you are trusting, what is not done yet
-- [Security policy](https://github.com/selfhostit/.github/blob/main/SECURITY.md): how to report a problem
+- [Security policy](https://github.com/selfhostit/.github/blob/main/SECURITY.md): how to report a problem, response and fix times
 - [Updates and backups](https://github.com/selfhostit/docs/blob/main/updates-and-backups.md)
 - [Use the apps on your phones](https://github.com/selfhostit/docs/blob/main/phones.md): Tailscale or a reverse proxy
 

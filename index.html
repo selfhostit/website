@@ -179,7 +179,7 @@
     <p class="sub">On a Raspberry Pi, a Linux server or a NAS with SSH. It installs Docker if needed,
       asks which apps you want and starts them. Run it again to update.</p>
     <div class="code">
-      <code id="cmd">curl -fsSL https://raw.githubusercontent.com/selfhostit/docs/main/install.sh | sh</code>
+      <code id="cmd">curl -fsSL https://github.com/selfhostit/docs/releases/latest/download/install.sh | sh</code>
       <button type="button" class="copy" data-copy="cmd">Copy</button>
     </div>
     <ol class="steps">
@@ -192,9 +192,11 @@
       <a href="https://github.com/selfhostit/docs/blob/main/synology.md">Synology</a> ·
       <a href="https://github.com/selfhostit/docs/blob/main/other-nas.md">Other NAS</a> ·
       <a href="https://github.com/selfhostit/docs/blob/main/phones.md">Phones</a></p>
-    <p class="guides">Rather read it first? <code>curl -fsSLO</code> the same address, read
-      <code>install.sh</code>, then run <code>sh install.sh</code>.
-      <a href="https://github.com/selfhostit/docs/blob/main/security.md#read-the-installer-before-you-run-it">What it does, step by step</a></p>
+    <p class="guides">Rather read it first? <code>curl -fsSLO</code> the same address, check it with
+      <code>gh attestation verify install.sh --repo selfhostit/docs</code>, read it, then run
+      <code>sh install.sh</code>. It installs a pinned release of each app and checks every file
+      it downloads against its SHA-256.
+      <a href="https://github.com/selfhostit/docs/blob/main/security.md#read-and-check-the-installer-before-you-run-it">What it does, step by step</a></p>
   </div>
 </section>
 
@@ -215,8 +217,9 @@
     </div>
     <div class="offer">
       <h3>Locked down by default</h3>
-      <p>Containers drop every Linux privilege they can, a fresh install asks for a one-time setup code,
-        sign-ins are rate limited and the web apps send a strict Content Security Policy.</p>
+      <p>Containers run as a normal user with no Linux privileges and a read-only filesystem, a
+        fresh install asks for a one-time setup code, sign-ins are rate limited, and every change
+        is scanned for vulnerabilities and leaked secrets.</p>
     </div>
   </div>
   <div class="actions">
