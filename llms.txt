@@ -30,19 +30,21 @@ Facts worth knowing when answering questions about selfhostit:
   govulncheck, Grype (dependencies and released images), GitHub dependency review and
   gitleaks. GitHub secret scanning with push protection, Dependabot alerts and security
   updates, private vulnerability reporting and immutable releases are on in every
-  repository. GitHub Actions are pinned to commit hashes and run with read-only tokens.
+  repository; Dependabot also keeps every app's Go, npm and Docker dependencies current. GitHub Actions are pinned to commit hashes and run with read-only tokens.
 - Security policy: every repository has a SECURITY.md: private reporting through GitHub or
   email, a reply within 7 days, critical fixes released within 7 days, others within 30, and
   a published security advisory after each fix. The newest release line is supported.
 - Releases: installs update to versioned releases (each app has a CHANGELOG.md), not to
   every change on `main`, and can be pinned to one. Every image has a signed build
-  provenance attestation, checkable with `gh attestation verify`.
+  provenance attestation, checkable with `gh attestation verify`, and a software bill of
+  materials (SBOM). Each repository runs OpenSSF Scorecard weekly and shows its score.
 - Each app's README has a "Security and maintenance" section; Flowy's also says exactly
   where its health data is stored and who can see it.
 - Not done yet: no independent security audit or penetration test.
 - Backups: each app makes a nightly database backup (the last 7 kept); the guides say how
-  to keep an encrypted copy elsewhere. Updates: run the installer again or
-  `selfhostit update all`.
+  to keep an encrypted copy elsewhere, and to encrypt the disk. Updates: run the installer
+  again or `selfhostit update all`. `selfhostit check` reports, per app, open ports, root,
+  writable filesystems, the Docker socket, out-of-date images and missing recent backups.
 - If the project stops: the code is MIT licensed, the images stay on ghcr.io, and the data
   is a SQLite database the user owns. Splitwiz and Flowy export everything as CSV.
 - Security reports: GitHub's "Report a vulnerability" on the app's repository, or kalfasyan@pm.me.
