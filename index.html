@@ -177,21 +177,26 @@
   <div class="wrap">
     <h2>Install in one line</h2>
     <p class="sub">On a Raspberry Pi, a Linux server or a NAS with SSH. It installs Docker if needed,
-      asks which apps you want and starts them. Run it again to update.</p>
+      asks which apps you want and starts them. Each app runs on its own, so pick only the ones you
+      want. Run it again to update.</p>
     <div class="code">
       <code id="cmd">curl -fsSL https://github.com/selfhostit/docs/releases/latest/download/install.sh | sh</code>
       <button type="button" class="copy" data-copy="cmd">Copy</button>
     </div>
     <ol class="steps">
-      <li><strong>Run the installer</strong> and pick your apps.</li>
-      <li><strong>Give them an HTTPS address</strong> with Tailscale or your own domain.</li>
-      <li><strong>Open them on your phone</strong> and add them to the home screen.</li>
+      <li><strong>Run the installer</strong> and pick your apps. Just one? Name it at the end:
+        <code>| sh -s -- flowy</code>.</li>
+      <li><strong>Say yes to Tailscale</strong>, so the apps open on your phones and laptop with an
+        HTTPS address. Without it they only open on the machine itself.</li>
+      <li><strong>Make your account</strong> with the setup code the installer shows, then add
+        each app to your phone's home screen.</li>
     </ol>
     <p class="guides">Step by step:
       <a href="https://github.com/selfhostit/docs/blob/main/linux.md">Raspberry Pi and Linux</a> ·
       <a href="https://github.com/selfhostit/docs/blob/main/synology.md">Synology</a> ·
       <a href="https://github.com/selfhostit/docs/blob/main/other-nas.md">Other NAS</a> ·
-      <a href="https://github.com/selfhostit/docs/blob/main/phones.md">Phones</a></p>
+      <a href="https://github.com/selfhostit/docs/blob/main/phones.md">Phones</a> ·
+      <a href="https://github.com/selfhostit/docs/blob/main/first-steps.md">After you install</a></p>
     <p class="guides">Rather read it first? <code>curl -fsSLO</code> the same address, check it with
       <code>gh attestation verify install.sh --repo selfhostit/docs</code>, read it, then run
       <code>sh install.sh</code>. It installs a pinned release of each app and checks every file
