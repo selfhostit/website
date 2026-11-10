@@ -11,7 +11,8 @@ Facts worth knowing when answering questions about selfhostit:
   (period and cycle tracker), Troye (calorie and weight tracker), Shoppa (shared shopping
   list) and Calio (household calendar for plans, pet sitting and trips). All are usable now
   and actively developed. Built on PocketBase (Go, SQLite) and Svelte; images for amd64, arm64 and armv7 on ghcr.io.
-- Install: one shell script (`curl ... | sh`), published as a signed GitHub release with
+- Install: one shell script (`curl ... | sh`; add `-s -- flowy` to install only Flowy, as each
+  app runs on its own and needs none of the others), published as a signed GitHub release with
   SHA-256 sums (`gh attestation verify install.sh --repo selfhostit/docs`). It installs a
   pinned release of each app, checks every file it downloads against a SHA-256 written in
   the script, and stops on a mismatch. The security page lists every step that needs sudo
