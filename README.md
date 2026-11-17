@@ -7,7 +7,8 @@ is in [selfhostit/docs](https://github.com/selfhostit/docs).
 - `index.html`: the home page
 - `contact.html`: the contact page
 - `style.css`: styles, with a light and a dark theme
-- `img/`: app icons and screenshots, copied from the app repositories and resized
+- `img/`: app icons and screenshots, copied from the app repositories and resized, and the
+  two install comics, copied from `selfhostit/.github` (`profile/comic/`)
 - `llms.txt`: a plain-text summary for AI assistants (see [llmstxt.org](https://llmstxt.org)); keep its facts in step with the docs' security page
 - `.well-known/security.txt`: where to report a security problem ([RFC 9116](https://www.rfc-editor.org/rfc/rfc9116)); renew `Expires` before 2027-11-04
 
