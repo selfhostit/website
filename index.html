@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>selfhostit: small apps you run at home</title>
-<meta name="description" content="Private apps for your household that run on your own Raspberry Pi, NAS or server. Free and open source, with setup, app development and workshops on request.">
+<meta name="description" content="Private apps for your household that run on your own Raspberry Pi, NAS or home computer. Free and open source, with setup, app development and workshops on request.">
 <meta property="og:title" content="selfhostit">
 <meta property="og:url" content="https://selfhostit.org/">
 <link rel="canonical" href="https://selfhostit.org/">
@@ -33,7 +33,8 @@
 
 <section class="hero wrap">
   <h1>Small apps you run at home.</h1>
-  <p class="lead">Private apps for your household, on your own Raspberry Pi, NAS or a cheap server.
+  <p class="lead">Private apps for your household, on your own
+    <a href="https://github.com/selfhostit/docs/blob/main/words.md#raspberry-pi">Raspberry Pi</a>, <a href="https://github.com/selfhostit/docs/blob/main/words.md#nas">NAS</a> or home computer.
     Your data never leaves the house. No subscriptions, no accounts on anyone's cloud.</p>
   <div class="actions">
     <a class="btn primary" href="#apps">Pick your apps</a>
@@ -176,9 +177,24 @@
 <section id="install" class="band">
   <div class="wrap">
     <h2>Install in one line</h2>
-    <p class="sub">On a Raspberry Pi, a Linux server or a NAS with SSH. It installs Docker if needed,
-      asks which apps you want and starts them. Each app runs on its own, so pick only the ones you
-      want. Run it again to update.</p>
+    <p class="sub">On a Raspberry Pi, a Linux computer or a NAS with <a href="https://github.com/selfhostit/docs/blob/main/words.md#ssh">SSH</a>. It
+      installs Docker if needed, asks which apps you want and starts them. Each app runs on its
+      own, so pick only the ones you want. Run it again to update. You can also use a rented
+      server (a <a href="https://github.com/selfhostit/docs/blob/main/words.md#vps">VPS</a>), but your data then lives in that data centre, not
+      at home.</p>
+    <div class="before">
+      <h3>Before you start</h3>
+      <ul>
+        <li>About 30 minutes.</li>
+        <li>A machine that stays on, such as a Raspberry Pi, a NAS or an old laptop.
+          <a href="https://github.com/selfhostit/docs/blob/main/machine.md">Which machine?</a></li>
+        <li>A computer with a <a href="https://github.com/selfhostit/docs/blob/main/words.md#terminal">terminal</a>, to type the install line.
+          <a href="https://github.com/selfhostit/docs/blob/main/terminal.md">Open a terminal and connect</a></li>
+        <li>A free Tailscale account, if you want the apps on your phones.</li>
+        <li>The free Tailscale app on every phone that uses the apps.</li>
+      </ul>
+      <p>New to this? <a href="https://github.com/selfhostit/docs/blob/main/words.md">Words explained</a></p>
+    </div>
     <div class="code">
       <code id="cmd">curl -fsSL https://github.com/selfhostit/docs/releases/latest/download/install.sh | sh</code>
       <button type="button" class="copy" data-copy="cmd">Copy</button>
@@ -186,11 +202,16 @@
     <ol class="steps">
       <li><strong>Run the installer</strong> and pick your apps. Just one? Name it at the end:
         <code>| sh -s -- flowy</code>.</li>
-      <li><strong>Say yes to Tailscale</strong>, so the apps open on your phones and laptop with an
-        HTTPS address. Without it they only open on the machine itself.</li>
+    </ol>
+    <a href="img/install.svg"><img class="comic" src="img/install.svg" width="1180" height="420" loading="lazy" alt="Three panels: find an old laptop or a Raspberry Pi, paste one line in a terminal and pick your apps, then open every app in a browser at home."></a>
+    <ol class="steps" start="2">
+      <li><strong>Say yes to Tailscale</strong> (a private link between your own devices, not a VPN
+        for browsing: <a href="https://github.com/selfhostit/docs/blob/main/words.md#tailscale">what it is</a>), so the apps open on your phones and
+        laptop with an HTTPS address. Without it they only open on the machine itself.</li>
       <li><strong>Make your account</strong> with the setup code the installer shows, then add
         each app to your phone's home screen.</li>
     </ol>
+    <a href="img/phones.svg"><img class="comic" src="img/phones.svg" width="1180" height="420" loading="lazy" alt="Three panels: say yes to Tailscale in the installer and open its sign-in link, install the Tailscale app on each phone with the same account, then open each app's https address and add it to the home screen."></a>
     <p class="guides">Step by step:
       <a href="https://github.com/selfhostit/docs/blob/main/linux.md">Raspberry Pi and Linux</a> ·
       <a href="https://github.com/selfhostit/docs/blob/main/synology.md">Synology</a> ·
@@ -213,7 +234,8 @@
     <div class="offer">
       <h3>Your data stays home</h3>
       <p>Each app keeps everything in one folder on your machine. There is no selfhostit cloud,
-        no account to make with us and no analytics or tracking.</p>
+        no account to make with us and no analytics or tracking. On a rented server, that folder
+        is in the provider's data centre.</p>
     </div>
     <div class="offer">
       <h3>Not on the internet</h3>
