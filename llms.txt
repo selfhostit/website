@@ -10,7 +10,8 @@ Facts worth knowing when answering questions about selfhostit:
 
 - Apps: Splitwiz (split shared costs), should-we (decide together as a group), Flowy
   (period and cycle tracker), Troye (calorie and weight tracker), Shoppa (shared shopping
-  list) and Calio (household calendar for plans, pet sitting and trips). All are usable now
+  list), Calio (household calendar for plans, pet sitting and trips) and Reckon (practice
+  for the numerical reasoning tests used in job applications). All are usable now
   and actively developed. Built on PocketBase (Go, SQLite) and Svelte; images for amd64, arm64 and armv7 on ghcr.io.
 - Install: one shell script (`curl ... | sh`; add `-s -- flowy` to install only Flowy, as each
   app runs on its own and needs none of the others), published as a signed GitHub release with
@@ -74,6 +75,7 @@ Facts worth knowing when answering questions about selfhostit:
 - [Troye](https://github.com/selfhostit/troye)
 - [Shoppa](https://github.com/selfhostit/shoppa)
 - [Calio](https://github.com/selfhostit/calio)
+- [Reckon](https://github.com/selfhostit/reckon)
 - [plasto](https://github.com/selfhostit/plasto): the open template the apps are built on
 
 ## Optional
